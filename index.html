@@ -16,7 +16,7 @@
         margin: 0 auto;
       }
 
-      .guage-container {
+      .guage {
         position: relative;
         width: 292px;
         height: 292px;
@@ -26,14 +26,14 @@
         border-radius: 5px;
       }
 
-      .center {
+      .guage__center {
         position: relative;
         width: 260px;
         height: 260px;
         margin: 10px auto;
       }
 
-      .outer-arc {
+      .guage__outer-arc {
         position: absolute;
         border: 20px solid #dbeafe;
         width: 260px;
@@ -42,7 +42,7 @@
         border-bottom: 20px solid transparent;
       }
 
-      .outer-arc::after {
+      .guage__outer-arc::after {
         content: "";
         position: absolute;
         top: 184px;
@@ -53,7 +53,7 @@
         transform: rotate(130deg);
       }
 
-      .outer-overlapped-arc {
+      .guage__outer-overlapped-arc {
         position: absolute;
         width: 260px;
         height: 260px;
@@ -64,7 +64,7 @@
         border-right: 20px solid transparent;
       }
 
-      .outer-overlapped-arc::after {
+      .guage__outer-overlapped-arc::after {
         content: "";
         position: absolute;
         top: 184px;
@@ -75,7 +75,7 @@
         transform: rotate(49deg);
       }
 
-      .inner-arc {
+      .guage__inner-arc {
         position: absolute;
         width: 160px;
         height: 146.32px;
@@ -86,7 +86,7 @@
         border-bottom: 1px solid transparent;
       }
 
-      .inner-arc::before {
+      .guage__inner-arc::before {
         position: absolute;
         content: "00";
         width: 50px;
@@ -95,7 +95,7 @@
         left: 18px;
       }
 
-      .inner-arc::after {
+      .guage__inner-arc::after {
         position: absolute;
         content: "100";
         width: 50px;
@@ -104,7 +104,7 @@
         left: 117px;
       }
 
-      .point {
+      .guage__point {
         position: absolute;
         top: 44%;
         left: 45%;
@@ -115,11 +115,11 @@
         background-color: #bfdbfe;
       }
 
-      .needle-container {
+      .guage__needle-container {
         position: relative;
       }
 
-      .needle {
+      .guage__needle {
         width: 10px;
         height: 88px;
         background-color: #bfdbfe;
@@ -149,7 +149,7 @@
         }
       }
 
-      .needle-center {
+      .guage__needle-center {
         position: absolute;
         width: 4px;
         height: 4px;
@@ -160,7 +160,7 @@
         border: 1px dashed #2563eb;
       }
 
-      .text {
+      .guage__text {
         position: absolute;
         top: 215px;
         left: 108px;
@@ -173,19 +173,19 @@
   </head>
   <body>
     <div class="wrapper">
-      <div class="guage-container">
-        <div class="center">
-          <div class="outer-arc"></div>
-          <div class="outer-overlapped-arc"></div>
-          <div class="inner-arc"></div>
-          <div class="point">
+      <div class="guage">
+        <div class="guage__center">
+          <div class="guage__outer-arc"></div>
+          <div class="guage__outer-overlapped-arc"></div>
+          <div class="guage__inner-arc"></div>
+          <div class="guage__point">
             <div class="needle-container">
-              <div class="needle"></div>
-              <div class="needle-center"></div>
+              <div class="guage__needle"></div>
+              <div class="guage__needle-center"></div>
             </div>
           </div>
         </div>
-        <div class="text">%age</div>
+        <div class="guage__text">%age</div>
       </div>
     </div>
   </body>
