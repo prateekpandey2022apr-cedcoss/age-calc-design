@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      .wrapper {
+        max-width: 1140px;
+        margin: 0 auto;
+      }
+
+      .guage-container {
+        position: relative;
+        width: 292px;
+        height: 292px;
+        background-color: #eff6ff;
+        margin: 0 auto;
+        border: 1px dashed #1d4ed8;
+        border-radius: 5px;
+      }
+
+      .center {
+        position: relative;
+        width: 260px;
+        height: 260px;
+        margin: 10px auto;
+      }
+
+      .outer-arc {
+        position: absolute;
+        border: 20px solid #dbeafe;
+        width: 260px;
+        height: 260px;
+        border-radius: 50%;
+        border-bottom: 20px solid transparent;
+      }
+
+      .outer-arc::after {
+        content: "";
+        position: absolute;
+        top: 184px;
+        right: 14px;
+        border: 10px solid #dbeafe;
+        border-top-right-radius: 50%;
+        border-bottom-right-radius: 50%;
+        transform: rotate(130deg);
+      }
+
+      .outer-overlapped-arc {
+        position: absolute;
+        width: 260px;
+        height: 260px;
+        border: 20px solid #bfdbfe;
+        border-radius: 50%;
+        border-bottom: 20px solid transparent;
+        border-top: 20px solid transparent;
+        border-right: 20px solid transparent;
+      }
+
+      .outer-overlapped-arc::after {
+        content: "";
+        position: absolute;
+        top: 184px;
+        left: 14px;
+        border: 10px solid #bfdbfe;
+        border-top-right-radius: 50%;
+        border-bottom-right-radius: 50%;
+        transform: rotate(49deg);
+      }
+
+      .inner-arc {
+        position: absolute;
+        width: 160px;
+        height: 146.32px;
+        left: 51px;
+        top: 55px;
+        border: 1px dashed #2563eb;
+        border-radius: 50%;
+        border-bottom: 1px solid transparent;
+      }
+
+      .inner-arc::before {
+        position: absolute;
+        content: "00";
+        width: 50px;
+        height: 50px;
+        top: 124px;
+        left: 18px;
+      }
+
+      .inner-arc::after {
+        position: absolute;
+        content: "100";
+        width: 50px;
+        height: 50px;
+        top: 124px;
+        left: 117px;
+      }
+
+      .point {
+        position: absolute;
+        top: 44%;
+        left: 45%;
+        width: 30px;
+        height: 28px;
+        border-radius: 50%;
+        border: 1px dashed #2563eb;
+        background-color: #bfdbfe;
+      }
+
+      .needle-container {
+        position: relative;
+      }
+
+      .needle {
+        width: 10px;
+        height: 88px;
+        background-color: #bfdbfe;
+        border-bottom-left-radius: 50%;
+        border-bottom-right-radius: 50%;
+        border-top-left-radius: 100%;
+        border-top-right-radius: 100%;
+        display: inline-block;
+        left: 10px;
+        position: absolute;
+        top: -75px;
+        transform: rotate(-42deg);
+        transform-origin: bottom;
+        border: 1px dashed #2563eb;
+        -webkit-animation: swing 5s infinite;
+      }
+
+      @-webkit-keyframes swing {
+        0% {
+          transform: rotate(-90deg);
+        }
+        50% {
+          transform: rotate(90deg);
+        }
+        100% {
+          transform: rotate(-90deg);
+        }
+      }
+
+      .needle-center {
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        top: 12px;
+        left: 12px;
+        background-color: #93c5fd;
+        border-radius: 50%;
+        border: 1px dashed #2563eb;
+      }
+
+      .text {
+        position: absolute;
+        top: 215px;
+        left: 108px;
+        font-size: 25px;
+        color: #1d4ed8;
+        font-size: 36px;
+        font-style: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="guage-container">
+        <div class="center">
+          <div class="outer-arc"></div>
+          <div class="outer-overlapped-arc"></div>
+          <div class="inner-arc"></div>
+          <div class="point">
+            <div class="needle-container">
+              <div class="needle"></div>
+              <div class="needle-center"></div>
+            </div>
+          </div>
+        </div>
+        <div class="text">%age</div>
+      </div>
+    </div>
+  </body>
+</html>
