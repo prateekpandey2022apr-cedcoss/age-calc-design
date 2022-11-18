@@ -9,8 +9,8 @@
 
 .guage {
     position: relative;
-    width: 292px;
-    height: 292px;
+    width: 320px;
+    height: 322px;
     background-color: #eff6ff;
     margin: 0 auto;
     border: 1px dashed #1d4ed8;
@@ -21,24 +21,24 @@
     position: relative;
     width: 260px;
     height: 260px;
-    margin: 10px auto;
+    margin: 32px auto;
 }
 
 .guage__outer-arc {
     position: absolute;
-    border: 20px solid #dbeafe;
+    border: 25px solid #dbeafe;
     width: 260px;
     height: 260px;
     border-radius: 50%;
-    border-bottom: 20px solid transparent;
+    border-bottom: 25px solid transparent;
 }
 
 .guage__outer-arc::after {
     content: "";
     position: absolute;
-    top: 184px;
+    top: 181px;
     right: 14px;
-    border: 10px solid #dbeafe;
+    border: 12.5px solid #dbeafe;
     border-top-right-radius: 50%;
     border-bottom-right-radius: 50%;
     transform: rotate(130deg);
@@ -48,22 +48,33 @@
     position: absolute;
     width: 260px;
     height: 260px;
-    border: 20px solid #bfdbfe;
+    border: 25px solid #bfdbfe;
     border-radius: 50%;
-    border-bottom: 20px solid transparent;
-    border-top: 20px solid transparent;
-    border-right: 20px solid transparent;
+    border-bottom: 25px solid transparent;
+    border-top: 25px solid transparent;
+    border-right: 25px solid transparent;
 }
 
 .guage__outer-overlapped-arc::after {
     content: "";
     position: absolute;
-    top: 184px;
+    top: 181px;
     left: 14px;
-    border: 10px solid #bfdbfe;
+    border: 12.5px solid #bfdbfe;
     border-top-right-radius: 50%;
     border-bottom-right-radius: 50%;
     transform: rotate(49deg);
+}
+
+.guage__outer-overlapped-arc::before {
+    content: "";
+    position: absolute;
+    top: 9px;
+    left: 10px;
+    border: 12.5px solid #bfdbfe;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    transform: rotate(-47deg);
 }
 
 .guage__inner-arc {
@@ -84,6 +95,7 @@
     height: 50px;
     top: 124px;
     left: 18px;
+    color: #3B82F6;
 }
 
 .guage__inner-arc::after {
@@ -93,6 +105,7 @@
     height: 50px;
     top: 124px;
     left: 117px;
+    color: #3B82F6;
 }
 
 .guage__point {
@@ -106,59 +119,78 @@
     background-color: #bfdbfe;
 }
 
+.guage__text {
+    position: absolute;
+    top: 240px;
+    left: 121px;
+    color: #1d4ed8;
+    font-size: 36px;
+}
+
+
 .guage__needle-container {
+    position: relative;
+    top: -95px;
+    left: 4px;
+    transform: rotate(305deg);
+    transform-origin: bottom;
+}
+
+
+.guage__needle {
+    width: 40px;
+    height: 100px;
+    background-color: #bfdbfe;
+    -webkit-clip-path: polygon(15% 4%, 0 100%, 30% 100%);
+    clip-path: polygon(15% 4%, 0 100%, 30% 100%);
     position: relative;
 }
 
-.guage__needle {
-    width: 10px;
-    height: 88px;
-    background-color: #bfdbfe;
-    border-bottom-left-radius: 50%;
-    border-bottom-right-radius: 50%;
-    border-top-left-radius: 100%;
-    border-top-right-radius: 100%;
-    display: inline-block;
-    left: 10px;
-    position: absolute;
-    top: -75px;
-    transform: rotate(-42deg);
-    transform-origin: bottom;
-    border: 1px dashed #2563eb;
-    -webkit-animation: swing 5s infinite;
-}
 
-@-webkit-keyframes swing {
-    0% {
-        transform: rotate(-90deg);
-    }
-
-    50% {
-        transform: rotate(90deg);
-    }
-
-    100% {
-        transform: rotate(-90deg);
-    }
-}
-
-.guage__needle-center {
-    position: absolute;
-    width: 4px;
-    height: 4px;
-    top: 12px;
-    left: 12px;
-    background-color: #93c5fd;
+.guage__needle-base {
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
+    background-color: #bfdbfe;
+    bottom: -1px;
+    position: absolute;
+    bottom: -8px;
+    left: -1px;
     border: 1px dashed #2563eb;
+    border-top: 1px dashed transparent;
+    border-top-left-radius: 18%;
+    border-top-right-radius: 18%;
 }
 
-.guage__text {
+.guage__border-1 {
     position: absolute;
-    top: 215px;
-    left: 108px;
-    font-size: 25px;
-    color: #1d4ed8;
-    font-size: 36px;
-    font-style: bold;
+    width: 30px;
+    height: 95px;
+    top: 0;
+    transform: rotate(4deg);
+    top: 4px;
+    left: -26.7px;
+    border-right: 1px dashed #2563eb;
+}
+
+.guage__border-2 {
+    position: absolute;
+    width: 30px;
+    height: 95px;
+    top: 0;
+    transform: rotate(-3deg);
+    top: 5px;
+    left: -21px;
+    border-right: 1px dashed #2563eb;
+}
+
+.guage__pivot-point {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    top: 98px;
+    left: 2.9px;
+    background-color: #93C5FD;
+    border: 1px dashed #2563EB;
 }
